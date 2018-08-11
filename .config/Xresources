@@ -1,0 +1,161 @@
+! After changing this file run: $ xrdb ~/.config/Xresources
+
+Xcursor*theme: Vanilla-DMZ
+*scrollBar: false
+
+!!!!!!!!!!
+! colors !
+!!!!!!!!!!
+
+! Base16 Ocean
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #2b303b
+#define base01 #343d46
+#define base02 #4f5b66
+#define base03 #65737e
+#define base04 #a7adba
+#define base05 #c0c5ce
+#define base06 #dfe1e8
+#define base07 #eff1f5
+#define base08 #bf616a
+#define base09 #d08770
+#define base0A #ebcb8b
+#define base0B #a3be8c
+#define base0C #96b5b4
+#define base0D #8fa1b3
+#define base0E #b48ead
+#define base0F #ab7967
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
+
+!!!!!!!!!
+! urxvt !
+!!!!!!!!!
+
+urxvt*externalBorder: 0
+urxvt*imLocale: en_US.UTF-8
+urxvt*internalBorder: 2
+urxvt*loginShell: true
+urxvt*matcher.button: 1
+urxvt*perl-ext-common: matcher
+urxvt*saveLines: 1000
+urxvt*secondaryScroll: true
+urxvt*scrollTtyOutput: false
+urxvt*scrollTtyKeypress: true
+urxvt*tintColor: #CCCCCC
+urxvt*url-launcher: chromium
+
+! fonts
+urxvt*font: xft:xos4 Terminus:size=11
+
+!!!!!!!!!!
+! xcalc  !
+!!!!!!!!!!
+
+xcalc*cursor: hand2
+xcalc*fontSet: -*-*-*-*-*-*-*-*-*-*-*-*-iso10646-1
+xcalc*geometry: 200x275
+xcalc*shapeStyle: rectangle
+xcalc.ti.background: #BBBBBB
+xcalc.ti.bevel.background: #111111
+xcalc.ti.bevel.screen.background: #000000
+xcalc.ti.bevel.screen.DEG.background: #000000
+xcalc.ti.bevel.screen.DEG.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.GRAD.background: #000000
+xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.RAD.background: #000000
+xcalc.ti.bevel.screen.RAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.INV.background: #000000
+xcalc.ti.bevel.screen.INV.foreground: Red
+xcalc.ti.bevel.screen.LCD.background: #000000
+xcalc.ti.bevel.screen.LCD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0
+xcalc.ti.bevel.screen.M.background: #000000
+xcalc.ti.bevel.screen.M.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.P.background: #000000
+xcalc.ti.bevel.screen.P.foreground: Yellow
+xcalc.ti.Command.foreground: White
+xcalc.ti.Command.background: #777777
+xcalc.ti.button5.background: Orange3
+xcalc.ti.button19.background: #611161
+xcalc.ti.button18.background: #611161
+xcalc.ti.button20.background: #611111
+xcalc.ti.button25.background: #722222
+xcalc.ti.button30.background: #833333
+xcalc.ti.button35.background: #944444
+xcalc.ti.button40.background: #A55555
+xcalc.ti.button22.background: #222262
+xcalc.ti.button23.background: #222262
+xcalc.ti.button24.background: #222272
+xcalc.ti.button27.background: #333373
+xcalc.ti.button28.background: #333373
+xcalc.ti.button29.background: #333373
+xcalc.ti.button32.background: #444484
+xcalc.ti.button33.background: #444484
+xcalc.ti.button34.background: #444484
+xcalc.ti.button37.background: #555595
+xcalc.ti.button38.background: #555595
+xcalc.ti.button39.background: #555595
+xcalc.ti.button3.label: SQRT
+xcalc.ti.button20.label: /
+xcalc.ti.button25.label: x
+
+!!!!!!!!
+! xft  !
+!!!!!!!!
+
+xft.antialias: 1
+xft.hinting: 1
+xft.hintstyle: 3
+
+!!!!!!!!!!
+! xterm  !
+!!!!!!!!!!
+
+xterm*faceName: xos4 Terminus
+xterm*autoWrap: true
+xterm*charClass: 33:48,37:48,45-47:48,64:48
+!xterm*cursorColor: gold
+xterm*eightBitInput: false
+xterm*faceSize: 10
+xterm*jumpScroll: true
+xterm*loginShell: true
+xterm*multiScroll: true
+xterm*saveLines: 1000
+xterm*scrollKey: true
+xterm*scrollTtyOutput: false
+xterm*utf8: true
