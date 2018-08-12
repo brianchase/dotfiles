@@ -1,9 +1,9 @@
 # ~/.bash_profile
 
 # Set environment variables for Bash:
-export HISTCONTROL=ignoreboth:erasedups # No duplicate entries in history
+export HISTCONTROL=ignoreboth:erasedups # No duplicate entries in history, etc.
 export HISTFILESIZE=0                   # Empty history on logout
-export HISTSIZE=100                     # Until logout, keep 100 line of history
+export HISTSIZE=100                     # Until logout, keep 100 lines of history
 
 # For less:
 export LESSHISTFILE=- # No history file ($HOME/.lesshst)
