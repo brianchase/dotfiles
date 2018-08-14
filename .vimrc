@@ -276,6 +276,7 @@ autocmd FileType tex,text autocmd BufWritePre * ks|call UpdateTimeStampA()|'s
 
 set autoread                  " ar: Reread file when changed from outside
 set autowrite                 " aw: Write a modified file on certain events
+set clipboard=unnamedplus     " Access X11 clipboard (Ctrl+C, Ctrl+V, etc.)
 set cpoptions-=a              " cpo: After ":read", no alternate file name
 set fileformats=unix,dos,mac  " ffs: These file formats, in this order
 filetype plugin on            " Turn on filetype detection and plugin
