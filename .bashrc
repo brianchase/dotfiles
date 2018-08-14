@@ -9,13 +9,19 @@ case $UID in
   *) PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] " ;;
 esac
 
+# After commands, update LINES and COLUMNS:
+[ -n "$DISPLAY" ] && shopt -s checkwinsize
+
 # Use colors:
 use_color=true
 [ -x "$(command -v dircolors)" ] && [ -r "$HOME/.config/dircolors" ] \
-  && eval "$(dircolors -b $HOME/.config/dircolors)"
+  && eval "$(dircolors -b $HOME/.config/dircolors)" || eval "$(dircolors -b)"
 
-complete -cf man  # Complete after man
-#complete -cf sudo # Complete after sudo
+# Tab completion after man:
+complete -c man
+
+# Remove Bash history file (it's empty per ~/.bash_profile):
+[ -f "$HISTFILE" ] && rm $HISTFILE
 
 # Set aliases:
 alias ls="ls --color=auto"
