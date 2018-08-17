@@ -322,16 +322,6 @@ EXEC 01;32
 .iso 01;31
 .ISO 01;31
 
-# Audio:
-.cue 00;36
-.CUE 00;36
-.m3u 00;36
-.M3U 00;36
-.m3u8 00;36
-.M3U8 00;36
-.pls 00;36
-.PLS 00;36
-
 # Image, video:
 .eps 01;35
 .EPS 01;35
