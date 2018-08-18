@@ -6,7 +6,8 @@ export HISTFILESIZE=0                   # Empty history on logout
 export HISTSIZE=100                     # Until logout, keep 100 lines of history
 
 # For less:
-export LESSHISTFILE=- # No history file ($HOME/.lesshst)
+export LESS="-F -i -M -X" # Use these options
+export LESSHISTFILE=-     # No history file ($HOME/.lesshst)
 
 # For TeX Live:
 [ -d "$HOME/.config/texmf" ] && export TEXMFHOME="$HOME/.config/texmf"

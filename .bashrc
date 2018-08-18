@@ -23,8 +23,14 @@ complete -c man
 # Remove Bash history file (it's empty per ~/.bash_profile):
 [ -f "$HISTFILE" ] && rm $HISTFILE
 
-# Set aliases:
+# Aliases and functions:
 alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
-[ -x "$(command -v online-xsetroot.sh)" ] && alias online="online-xsetroot.sh"
-[ -x "$(command -v vpn-xsetroot.sh)" ] && alias vpn="vpn-xsetroot.sh $1 $2"
+ol () { online-netctl.sh && status-dwm.sh; }
+vpn () { client-openvpn.sh "$1" "$2" && sleep 2 && status-dwm.sh; }
+
+# References:
+# client-openvpn.sh: https://github.com/brianchase/client-openvpn
+# dircolors: https://github.com/brianchase/dotfiles/.config
+# online-netctl.sh: https://github.com/brianchase/online-netctl
+# status-dwm.sh: https://github.com/brianchase/dotfiles/.bin
