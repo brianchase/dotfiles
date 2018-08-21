@@ -27,12 +27,12 @@ set guifont=Source\ Code\ Pro\ 11
 " ----- MOUSE -----
 
 set nomousehide         " nomh:   Do not hide mouse while typing
-"set mousemodel=extend  " mousem: Right mouse button opens a selection
+"set mousemodel=extend   " mousem: Right mouse button opens a selection
 "set mousemodel=popup    " mousem: Right mouse button opens a menu
 
 " ----- TABS -----
 
-set showtabline=1 " stal=1: Show tab line if more than one tab
+set showtabline=1  " stal=1: Show tab line if more than one tab
 
 " ----- MISCELLANEOUS -----
 
@@ -51,8 +51,9 @@ set guioptions-=m  " go-=m: Disable menu bar
 "set guioptions-=r  " go-=r: Disable right scrollbar
 set guioptions-=T  " go-=T: Disable toolbar
 
-set columns=74 " co: Set the number of columns
-set lines=40   " Set the number of lines
+set columns=74  " co: Set the number of columns
+" Avoid if using with dwm:
+"set lines=40  " Set the number of lines
 
 " Use gvimdiff with a wider window and bottom scrollbar:
 if &foldmethod == 'diff'
