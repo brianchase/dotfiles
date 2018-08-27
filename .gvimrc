@@ -26,9 +26,9 @@ set guifont=Source\ Code\ Pro\ 11
 
 " ----- MOUSE -----
 
-set nomousehide         " nomh:   Do not hide mouse while typing
-"set mousemodel=extend   " mousem: Right mouse button opens a selection
-"set mousemodel=popup    " mousem: Right mouse button opens a menu
+set nomousehide        " nomh:   Do not hide mouse while typing
+"set mousemodel=extend  " mousem: Right mouse button opens a selection
+"set mousemodel=popup   " mousem: Right mouse button opens a menu
 
 " ----- TABS -----
 
@@ -36,7 +36,10 @@ set showtabline=1  " stal=1: Show tab line if more than one tab
 
 " ----- MISCELLANEOUS -----
 
+"set columns=74         " co: Set the number of columns
 set display+=lastline  " Show incomplete lines
+set guiheadroom=0      " ghr: Use entire screen height (for dwm)
+"set lines=40           " Set the number of lines
 
 " Use Ctrl-a in normal mode to select all:
 map <C-a> ggVG
@@ -51,14 +54,10 @@ set guioptions-=m  " go-=m: Disable menu bar
 "set guioptions-=r  " go-=r: Disable right scrollbar
 set guioptions-=T  " go-=T: Disable toolbar
 
-set columns=74  " co: Set the number of columns
-" Avoid if using with dwm:
-"set lines=40  " Set the number of lines
-
-" Use gvimdiff with a wider window and bottom scrollbar:
+" For gvimdiff:
 if &foldmethod == 'diff'
-  set columns=140    " co: Set the number of columns
-  set guioptions+=b  " go: Add bottom scrollbar
-  set guioptions-=L  " go: No left scrollbar for vertically split windows
-  set guioptions+=R  " go: Right scrollbar for vertically split windows
+"  set columns=140    " co: Set the number of columns
+"  set guioptions+=b  " go: Add bottom scrollbar
+  set guioptions-=L  " go: No left scrollbar
+  set guioptions+=R  " go: Right scrollbar
 endif
