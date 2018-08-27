@@ -28,6 +28,8 @@ alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
 ol () { online-netctl.sh && status-dwm.sh; }
 vpn () { client-openvpn.sh "$1" "$2" && sleep 2 && status-dwm.sh; }
+export -f ol
+export -f vpn
 
 # References:
 # client-openvpn.sh: https://github.com/brianchase/client-openvpn
