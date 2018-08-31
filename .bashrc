@@ -17,8 +17,8 @@ use_color=true
 [ -x "$(command -v dircolors)" ] && [ -r "$HOME/.config/dircolors" ] \
   && eval "$(dircolors -b $HOME/.config/dircolors)" || eval "$(dircolors -b)"
 
-# Tab completion after man:
-complete -c man
+# Tab completion after man and sudo:
+complete -c man sudo
 
 # Remove Bash history file (empty per my ~/.bash_profile):
 [ -f "$HISTFILE" ] && rm $HISTFILE
