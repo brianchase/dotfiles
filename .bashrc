@@ -20,19 +20,20 @@ use_color=true
 # Tab completion after man:
 complete -c man
 
-# Remove Bash history file (it's empty per ~/.bash_profile):
+# Remove Bash history file (empty per my ~/.bash_profile):
 [ -f "$HISTFILE" ] && rm $HISTFILE
 
 # Aliases and functions:
 alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
 ol () { online-netctl.sh && status-dwm.sh; }
+syu () { chk-online.sh && sync-pacman.sh; }
 vpn () { client-openvpn.sh "$1" "$2" && sleep 2 && status-dwm.sh; }
-export -f ol
-export -f vpn
 
 # References:
+# chk-online.sh: https://github.com/brianchase/dotfiles/.bin
 # client-openvpn.sh: https://github.com/brianchase/client-openvpn
 # dircolors: https://github.com/brianchase/dotfiles/.config
 # online-netctl.sh: https://github.com/brianchase/online-netctl
 # status-dwm.sh: https://github.com/brianchase/dotfiles/.bin
+# sync-pacman.sh: https://github.com/brianchase/dotfiles/.bin
