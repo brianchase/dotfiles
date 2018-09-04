@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Set prompt:
-case $UID in
+case $EUID in
   0) PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] " ;;
   *) PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] " ;;
 esac
@@ -26,12 +26,14 @@ complete -c man sudo
 # Aliases and functions:
 alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
-chk-id () { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
+chk_id () { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
+lcd_off () { sleep 1; xset dpms force off && slock; }
 nwk () { online-netctl.sh && status-dwm.sh; }
-pac () { chk-http.sh && chk-id "pacman" "-S" "$@"; }
-rns () { [ "$(pacman -Qdqt)" ] && chk-id "pacman" "-Rns" $(pacman -Qdqt); }
-syu () { chk-http.sh && chk-id "pacman" "-Syu"; }
+pac () { chk-http.sh && chk_id "pacman" "-S" "$@"; }
+rns () { [ "$(pacman -Qdqt)" ] && chk_id "pacman" "-Rns" $(pacman -Qdqt); }
+syu () { chk-http.sh && chk_id "pacman" "-Syu"; }
 vpn () { client-openvpn.sh "$@" && sleep 2 && status-dwm.sh; }
+export -f lcd_off
 
 # References:
 # chk-http.sh: https://github.com/brianchase/dotfiles/.bin
