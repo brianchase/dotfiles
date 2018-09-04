@@ -26,14 +26,16 @@ complete -c man sudo
 # Aliases and functions:
 alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
-ol () { online-netctl.sh && status-dwm.sh; }
-syu () { chk-online.sh && sync-pacman.sh; }
-vpn () { client-openvpn.sh "$1" "$2" && sleep 2 && status-dwm.sh; }
+chk-id () { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
+nwk () { online-netctl.sh && status-dwm.sh; }
+pac () { chk-http.sh && chk-id "pacman" "-S" "$@"; }
+rns () { [ "$(pacman -Qdqt)" ] && chk-id "pacman" "-Rns" $(pacman -Qdqt); }
+syu () { chk-http.sh && chk-id "pacman" "-Syu"; }
+vpn () { client-openvpn.sh "$@" && sleep 2 && status-dwm.sh; }
 
 # References:
-# chk-online.sh: https://github.com/brianchase/dotfiles/.bin
+# chk-http.sh: https://github.com/brianchase/dotfiles/.bin
 # client-openvpn.sh: https://github.com/brianchase/client-openvpn
 # dircolors: https://github.com/brianchase/dotfiles/.config
 # online-netctl.sh: https://github.com/brianchase/online-netctl
 # status-dwm.sh: https://github.com/brianchase/dotfiles/.bin
-# sync-pacman.sh: https://github.com/brianchase/dotfiles/.bin
