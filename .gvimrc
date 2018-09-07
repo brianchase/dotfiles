@@ -48,16 +48,17 @@ map <C-a> ggVG
 imap <C-f> <ESC>:promptrepl<CR>i
 nmap <C-f> :promptrepl<CR>
 
-"set guioptions-=b  " go-=b: Disable bottom scrollbar
-"set guioptions=c   " go=c: Disable popup dialogs
-set guioptions-=m  " go-=m: Disable menu bar
-"set guioptions-=r  " go-=r: Disable right scrollbar
-set guioptions-=T  " go-=T: Disable toolbar
+set guioptions-=b  " go-=b: No bottom scrollbar
+"set guioptions=c   " go=c: No popup dialogs
+set guioptions-=m  " go-=m: No menu bar
+"set guioptions-=r  " go-=r: No right scrollbar
+set guioptions-=T  " go-=T: No toolbar
 
 " For gvimdiff:
-if &foldmethod == 'diff'
+if &diff
 "  set columns=140    " co: Set the number of columns
 "  set guioptions+=b  " go: Add bottom scrollbar
   set guioptions-=L  " go: No left scrollbar
   set guioptions+=R  " go: Right scrollbar
+  au VimResized * wincmd = " winc: Equal sized windows
 endif
