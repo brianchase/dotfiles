@@ -1,8 +1,6 @@
-# For changes to the defaults, see the Additions section further below.
+# For default settings, run: $ dircolors -p
 
-############################
-# Output of 'dircolors -p' #
-############################
+# ----- DEFAULT SETTINGS -----
 
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.
@@ -198,9 +196,7 @@ EXEC 01;32
 .spx 00;36
 .xspf 00;36
 
-#############
-# Additions #
-#############
+# ----- ADDITIONS -----
 
 # Uppercase of formats listed above:
 .TAR 01;31
@@ -316,8 +312,6 @@ EXEC 01;32
 .SPX 00;36
 .XSPF 00;36
 
-# Formats not listed above:
-
 # Archive, compressed:
 .iso 01;31
 .ISO 01;31
@@ -328,7 +322,7 @@ EXEC 01;32
 .ico 01;35
 .ICO 01;35
 
-# Other binary
+# Other binary:
 .djvu 00;31
 .DJVU 00;31
 .doc 00;31
@@ -370,7 +364,7 @@ EXEC 01;32
 .xlsx 00;31
 .XLSX 00;31
 
-# Other text
+# Other text:
 .bib 00;32
 .BIB 00;32
 .cls 00;32

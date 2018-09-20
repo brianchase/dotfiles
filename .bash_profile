@@ -23,5 +23,5 @@ export LESSHISTFILE=-     # No history file ($HOME/.lesshst)
 # Get additional settings from $HOME/.bashrc:
 [ -f "$HOME/.bashrc" ] && source $HOME/.bashrc
 
-# Upon first logging in at the console, start X:
-[[ "$(tty)" = /dev/tty1 && -z "$DISPLAY" ]] && startx
+# After logging in, start X:
+[ "$(tty)" = /dev/tty1 ] && [ -z "$DISPLAY" ] && startx

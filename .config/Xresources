@@ -3,9 +3,7 @@
 Xcursor*theme: Vanilla-DMZ
 *scrollBar: false
 
-!!!!!!!!!!
-! colors !
-!!!!!!!!!!
+! ----- COLORS -----
 
 ! Base16 Ocean
 ! Scheme: Chris Kempson (http://chriskempson.com)
@@ -27,46 +25,45 @@ Xcursor*theme: Vanilla-DMZ
 #define base0E #b48ead
 #define base0F #ab7967
 
-*foreground:   base05
+*foreground: base05
 #ifdef background_opacity
-*background:   [background_opacity]base00
+*background: [background_opacity]base00
 #else
-*background:   base00
+*background: base00
 #endif
-*cursorColor:  base05
+*cursorColor: base05
 
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
+*color0: base00
+*color1: base08
+*color2: base0B
+*color3: base0A
+*color4: base0D
+*color5: base0E
+*color6: base0C
+*color7: base05
 
-*color8:       base03
-*color9:       base08
-*color10:      base0B
-*color11:      base0A
-*color12:      base0D
-*color13:      base0E
-*color14:      base0C
-*color15:      base07
+*color8: base03
+*color9: base08
+*color10: base0B
+*color11: base0A
+*color12: base0D
+*color13: base0E
+*color14: base0C
+*color15: base07
 
 ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
 ! use 'shell' template to set these if necessary
-*color16:      base09
-*color17:      base0F
-*color18:      base01
-*color19:      base02
-*color20:      base04
-*color21:      base06
+*color16: base09
+*color17: base0F
+*color18: base01
+*color19: base02
+*color20: base04
+*color21: base06
 
-!!!!!!!!!
-! urxvt !
-!!!!!!!!!
+! ----- URXVT -----
 
 urxvt*externalBorder: 0
+urxvt*font: xft:xos4 Terminus:size=11
 urxvt*imLocale: en_US.UTF-8
 urxvt*internalBorder: 2
 urxvt*loginShell: true
@@ -77,14 +74,9 @@ urxvt*secondaryScroll: true
 urxvt*scrollTtyOutput: false
 urxvt*scrollTtyKeypress: true
 urxvt*tintColor: #CCCCCC
-urxvt*url-launcher: chromium
+urxvt*url-launcher: firefox
 
-! fonts
-urxvt*font: xft:xos4 Terminus:size=11
-
-!!!!!!!!!!
-! xcalc  !
-!!!!!!!!!!
+! ----- XCALC -----
 
 xcalc*cursor: hand2
 xcalc*fontSet: -*-*-*-*-*-*-*-*-*-*-*-*-iso10646-1
@@ -134,17 +126,13 @@ xcalc.ti.button3.label: SQRT
 xcalc.ti.button20.label: /
 xcalc.ti.button25.label: x
 
-!!!!!!!!
-! xft  !
-!!!!!!!!
+! ----- XFT -----
 
 xft.antialias: 1
 xft.hinting: 1
 xft.hintstyle: 3
 
-!!!!!!!!!!
-! xterm  !
-!!!!!!!!!!
+! ----- XTERM -----
 
 xterm*faceName: xos4 Terminus
 xterm*autoWrap: true
