@@ -14,15 +14,15 @@ With a few exceptions, all the relevant files are here:
 
 * [.vimrc](https://github.com/brianchase/dotfiles/blob/master/.vimrc)
 * [.gvimrc](https://github.com/brianchase/dotfiles/blob/master/.gvimrc)
-* [.vim/](https://github.com/brianchase/dotfiles/.vim)
+* [.vim/](https://github.com/brianchase/dotfiles/tree/master/.vim)
 
 The exceptions are my spellfiles (not included), my
 [latexmkrc](https://github.com/brianchase/dotfiles/blob/master/.latexmkrc)
 (used by
-[tex.vim](https://github.com/brianchase/dotfiles/.vim/ftplugin/blob/master/tex.vim)
+[tex.vim](https://github.com/brianchase/dotfiles/blob/master/.vim/ftplugin/tex.vim)
 in compiling TeX documents), and a template for blank TeX files
 (loaded by
-[tex.vim](https://github.com/brianchase/dotfiles/.vim/ftplugin/blob/master/tex.vim
+[tex.vim](https://github.com/brianchase/dotfiles/blob/master/.vim/ftplugin/tex.vim)
 but also not included).
 
 Since I often use [Vim](https://www.vim.org/) for writing, my settings
@@ -71,7 +71,9 @@ types.
 
 ## Scripts
 
-My [.bashrc](https://github.com/brianchase/dotfiles/.bashrc) and
+My
+[.bashrc](https://github.com/brianchase/dotfiles/blob/master/.bashrc)
+and
 [.xinitrc](https://github.com/brianchase/dotfiles/blob/master/.xinitrc)
 run scripts in my local
 [.bin](https://github.com/brianchase/dotfiles/.bin). I've included
@@ -86,7 +88,7 @@ to connect, then update the status bar in
 [dwm](http://dwm.suckless.org).
 * [compile-tex.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/compile-tex.sh):
 Compiles TeX documents. This is handy in rare emergencies when
-compiling in (Vim)[https://www.vim.org/] hides key error messages in
+compiling in [Vim](https://www.vim.org/) hides key error messages in
 stdout that don't appear in log files.
 * [default-tmux.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/default-tmux.sh):
 Starts or reattaches to my default
