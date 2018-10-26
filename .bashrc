@@ -28,7 +28,7 @@ alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
 chk_id () { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
 lcd_off () { sleep 1; xset dpms force off && slock; }
-nwk () { online-netctl.sh && status-dwm.sh; }
+nwk () { online-wpa.sh && status-dwm.sh; }
 pac () { chk-http.sh && chk_id "pacman" "-S" "$@"; }
 rns () { [ "$(pacman -Qdqt)" ] && chk_id "pacman" "-Rns" $(pacman -Qdqt); }
 syu () { chk-http.sh && chk_id "pacman" "-Syu"; }
