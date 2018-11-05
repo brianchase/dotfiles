@@ -16,14 +16,9 @@ With a few exceptions, all the relevant files are here:
 * [.gvimrc](https://github.com/brianchase/dotfiles/blob/master/.gvimrc)
 * [.vim/](https://github.com/brianchase/dotfiles/tree/master/.vim)
 
-The exceptions are my spellfiles (not included), my
-[latexmkrc](https://github.com/brianchase/dotfiles/blob/master/.latexmkrc)
-(used by
-[tex.vim](https://github.com/brianchase/dotfiles/blob/master/.vim/ftplugin/tex.vim)
-in compiling TeX documents), and a template for blank TeX files
-(loaded by
-[tex.vim](https://github.com/brianchase/dotfiles/blob/master/.vim/ftplugin/tex.vim)
-but also not included).
+The exceptions are several files not included here: my spellfiles and
+a template for blank TeX files, loaded by my
+[tex.vim](https://github.com/brianchase/dotfiles/blob/master/.vim/ftplugin/tex.vim.
 
 Since I often use [Vim](https://www.vim.org/) for writing, my settings
 allow for dynamic word wrapping, which I can toggle on or off in the
