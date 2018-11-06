@@ -44,8 +44,7 @@ vpn_arg () {
 net_main () {
   local Close Internal_IP Open SSID
   if wpa_cli -i "$Interface" status &>/dev/null; then
-    printf '%s\n' "Close connection on interface $Interface? [y/n]"
-    read -r Close
+    read -r -p "Close connection on interface $Interface? [y/n] " Close
     if [ "$Close" = "y" ]; then
       vpn_arg stop
       wpa_cli -i "$Interface" terminate &>/dev/null
@@ -54,8 +53,7 @@ net_main () {
   elif [ ! -s "$Config" ] || [ ! -r "$Config" ]; then
     net_error "$Config is missing, unreadable, or empty!"
   else
-    printf '%s\n' "Open connection on interface $Interface? [y/n]"
-    read -r Open
+    read -r -p "Open connection on interface $Interface? [y/n] " Open
     if [ "$Open" = "y" ]; then
       printf '%s\n' "Connecting on interface $Interface..."
       vpn_arg stop
