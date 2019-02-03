@@ -33,6 +33,7 @@ set nomousehide        " nomh:   Do not hide mouse while typing
 " ----- TABS -----
 
 set showtabline=1  " stal=1: Show tab line if more than one tab
+"set showtabline=2  " stal=2: Always show tab line
 
 " ----- MISCELLANEOUS -----
 

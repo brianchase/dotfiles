@@ -61,6 +61,8 @@ function! TeX(opt)
   silent execute '!latexmk -bibtex -f ' . flg . ' -silent ' . targ
   call ErrorCheck()
   call Tex_CD(s:origdir)
+" Clear previous message (recently became necessary):
+  echo ""
 endfunction
 
 function! ErrorCheck()
@@ -76,7 +78,6 @@ endfunction
 
 call IMAP('em`', '\emph{<++>}', 'tex')
 call IMAP('gr`', '\grk{<++>}', 'tex')
-call IMAP('os`', '\oldstylenums{<++>}', 'tex')
 call IMAP('bf`', '\textbf{<++>}', 'tex')
 call IMAP('it`', '\textit{<++>}', 'tex')
 call IMAP('md`', '\textmd{<++>}', 'tex')
@@ -90,16 +91,10 @@ call IMAP('2`', '\section{<++>}', 'tex')
 call IMAP('3`', '\subsection{<++>}', 'tex')
 call IMAP('4`', '\subsubsection{<++>}', 'tex')
 
-call IMAP('ba`', "\\begin{abstract}<++>\\end{abstract}", "tex")
 call IMAP('bc`', "\\begin{center}<++>\\end{center}", "tex")
 call IMAP('bd`', "\\begin{description}\<CR>\<CR>\\item[<++>]\<CR>\<CR>\\end{description}", "tex")
-call IMAP('bd*`', "\\begin{description*}\<CR>\<CR>\\item[<++>]\<CR>\<CR>\\end{description*}", "tex")
 call IMAP('be`', "\\begin{enumerate}\<CR>\<CR>\\item <++>\<CR>\<CR>\\end{enumerate}", "tex")
-call IMAP('be*`', "\\begin{enumerate*}\<CR>\<CR>\\item <++>\<CR>\<CR>\\end{enumerate*}", "tex")
-call IMAP('bfl`', "\\begin{flushleft}<++>\\end{flushleft}", "tex")
-call IMAP('bfr`', "\\begin{flushright}<++>\\end{flushright}", "tex")
 call IMAP('bi`', "\\begin{itemize}\<CR>\<CR>\\item <++>\<CR>\<CR>\\end{itemize}", "tex")
-call IMAP('bi*`', "\\begin{itemize*}\<CR>\<CR>\\item <++>\<CR>\<CR>\\end{itemize*}", "tex")
 call IMAP('bq`', "\\begin{quote}<++>\\end{quote}", "tex")
 call IMAP('bvb`', "\\begin{verbatim}<++>\\end{verbatim}", "tex")
 call IMAP('bvs`', "\\begin{verse}<++>\\end{verse}", "tex")
@@ -112,10 +107,8 @@ call IMAP ('m`', "$<++>$", "tex")
 
 " Key maps for enclosing selected text in visual mode:
 vmap em` "zdi\emph{<C-R>z}<ESC>
-vmap os` "zdi\oldstylenums{<C-R>z}<ESC>
 vmap bf` "zdi\textbf{<C-R>z}<ESC>
 vmap it` "zdi\textit{<C-R>z}<ESC>
-vmap md` "zdi\textmd{<C-R>z}<ESC>
 vmap md` "zdi\textmd{<C-R>z}<ESC>
 vmap sf` "zdi\textsf{<C-R>z}<ESC>
 vmap tt` "zdi\texttt{<C-R>z}<ESC>
@@ -126,10 +119,7 @@ vmap 2` "zdi\section{<C-R>z}<ESC>
 vmap 3` "zdi\subsection{<C-R>z}<ESC>
 vmap 4` "zdi\subsubsection{<C-R>z}<ESC>
 
-vmap ba` "zdi\begin{abstract} <C-R>z \\end{abstract}<ESC>
 vmap bc` "zdi\begin{center} <C-R>z \\end{center}<ESC>
-vmap bfl` "zdi\begin{flushleft} <C-R>z \\end{flushleft}<ESC>
-vmap bfr` "zdi\begin{flushright} <C-R>z \\end{flushright}<ESC>
 vmap bq` "zdi\begin{quote} <C-R>z \end{quote}<ESC>
 vmap bvb` "zdi\begin{verbatim} <C-R>z \\end{verbatim}<ESC>
 vmap bvs` "zdi\begin{verse} <C-R>z \\end{verse}<ESC>

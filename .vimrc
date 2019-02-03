@@ -73,8 +73,8 @@ imap <silent> <F4> <ESC>:call ViewFile("log","gvim")<ESC>a
 map <silent> <F4> :call ViewFile("log","gvim")<CR>
 
 " Keymaps for compiling (LaTeX):
-"imap <silent> <F5> <ESC>:call TeX("-pdf")<ESC>a
-"map <silent> <F5> :call TeX("-pdf")<CR>
+imap <silent> <F5> <ESC>:call TeX("-pdf")<ESC>a
+map <silent> <F5> :call TeX("-pdf")<CR>
 
 " Keymaps for compiling (XeTeX):
 imap <silent> <F6> <ESC>:call TeX("-xelatex")<ESC>a

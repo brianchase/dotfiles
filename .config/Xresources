@@ -74,7 +74,7 @@ urxvt*secondaryScroll: true
 urxvt*scrollTtyOutput: false
 urxvt*scrollTtyKeypress: true
 urxvt*tintColor: #CCCCCC
-urxvt*url-launcher: firefox
+urxvt*url-launcher: brave
 
 ! ----- XCALC -----
 
