@@ -19,7 +19,7 @@ export LESSHISTFILE=-     # No history file ($HOME/.lesshst)
 
 # Add $HOME/.bin to PATH:
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
-[ -d "$HOME/.gem" ] && export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
+[ -d "$HOME/.gem" ] && export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # Get additional settings from $HOME/.bashrc:
 [ -f "$HOME/.bashrc" ] && source $HOME/.bashrc
