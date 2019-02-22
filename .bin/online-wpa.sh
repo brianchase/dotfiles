@@ -24,6 +24,12 @@ external_ip () {
   printf '%s\n' "External address: $External_IP"
 }
 
+net_terminate () {
+  wpa_cli -i "$Interface" terminate &>/dev/null
+# No need to augment wpa_supplicant's stderr with net_error.
+  [ "$1" = noerror ] || exit 1
+}
+
 vpn_arg () {
   if [ -x "$(command -v client-openvpn.sh)" ]; then
     if [ "$1" = start ]; then
@@ -47,7 +53,7 @@ net_main () {
     read -r -p "Close connection on interface $Interface? [y/n] " Close
     if [ "$Close" = "y" ]; then
       vpn_arg stop
-      wpa_cli -i "$Interface" terminate &>/dev/null
+      net_terminate noerror
       net_sudo dhcpcd -k "$Interface" -q
     fi
   elif [ ! -s "$Config" ] || [ ! -r "$Config" ]; then
@@ -57,8 +63,7 @@ net_main () {
     if [ "$Open" = "y" ]; then
       printf '%s\n' "Connecting on interface $Interface..."
       vpn_arg stop
-# No need to augment wpa_supplicant's stderr with net_error.
-      net_sudo wpa_supplicant -B -c "$Config" -i "$Interface" -q || exit 1
+      net_sudo wpa_supplicant -B -c "$Config" -i "$Interface" -q || net_terminate
       [ -f "/run/dhcpcd-$Interface.pid" ] && net_sudo dhcpcd -k "$Interface" -q
 # Not all errors from dhcpcd here mean no connection. Wait, then check.
       net_sudo dhcpcd -q "$Interface" || sleep 12
