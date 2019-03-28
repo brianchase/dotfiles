@@ -14,7 +14,7 @@ With a few exceptions, all the relevant files are here:
 
 * [.vimrc](https://github.com/brianchase/dotfiles/blob/master/.vimrc ".vimrc")
 * [.gvimrc](https://github.com/brianchase/dotfiles/blob/master/.gvimrc ".gvimrc")
-* [.vim/](https://github.com/brianchase/dotfiles/tree/master/.vim ".vim")
+* [.vim](https://github.com/brianchase/dotfiles/tree/master/.vim ".vim")
 
 The exceptions are several files not included here: my spellfiles and
 a template for blank TeX files, loaded by my
