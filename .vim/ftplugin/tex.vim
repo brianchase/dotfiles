@@ -25,6 +25,11 @@ endif
 " Set syntax highlighting:
 exec AutoSyn()
 
+syn match  texRefZone		'\\cites\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match  texRefZone		'\\footcite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match  texRefZone		'\\nocite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match  texRefZone		'\\parencite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+
 " Adapted from http://vim.runpaint.org/typing/using-templates/
 
 function! TexTemplate()
