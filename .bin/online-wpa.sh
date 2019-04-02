@@ -26,8 +26,8 @@ external_ip () {
 
 net_terminate () {
   wpa_cli -i "$Interface" terminate &>/dev/null
-# No need to augment wpa_supplicant's stderr with net_error.
-  [ "$1" = noerror ] || exit 1
+  [ "$1" = noerror ] && exit 1
+  net_error "$1"
 }
 
 vpn_arg () {
@@ -74,7 +74,7 @@ net_main () {
         external_ip
         vpn_arg start
       else
-        net_error "Failed to get an IP address!"
+        net_terminate "Failed to get an IP address!"
       fi
     fi
   fi
