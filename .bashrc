@@ -39,5 +39,5 @@ export -f lcd_off
 # chk-http.sh: https://github.com/brianchase/dotfiles/.bin
 # client-openvpn.sh: https://github.com/brianchase/client-openvpn
 # dircolors: https://github.com/brianchase/dotfiles/.config
-# online-netctl.sh: https://github.com/brianchase/online-netctl
+# online-wpa.sh: https://github.com/brianchase/dotfiles/.bin
 # status-dwm.sh: https://github.com/brianchase/dotfiles/.bin
