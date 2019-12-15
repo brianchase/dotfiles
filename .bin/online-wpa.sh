@@ -3,6 +3,7 @@
 # Change as necessary:
 Config="/etc/wpa_supplicant/wpa_supplicant.conf"
 Interface="wlp3s0"
+VPN="y"
 
 net_sudo () {
   if [ "$(id -u)" -eq 0 ]; then
@@ -33,8 +34,9 @@ net_terminate () {
 vpn_arg () {
   if [ -x "$(command -v client-openvpn.sh)" ]; then
     if [ "$1" = start ]; then
-      local VPN
-      read -r -p "Start an OpenVPN client? [y/n] " VPN
+      if [ "$VPN" != y ]; then
+        read -r -p "Start an OpenVPN client? [y/n] " VPN
+      fi
       if [ "$VPN" = y ]; then
         if client-openvpn.sh start now; then
           sleep 3
