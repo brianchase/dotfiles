@@ -11,7 +11,7 @@
   status-dwm.sh; sleep 1m; done &
 
 # Restore wallpaper:
-[ -x "$(command -v $HOME/.fehbg)" ] && $HOME/.fehbg &
+[ -x "$(command -v $HOME/.config/feh/fehbg)" ] && $HOME/.config/feh/fehbg &
 
 # Attach to a tmux session:
 [ -x "$(command -v default-tmux.sh)" ] && st -e sh -c default-tmux.sh &

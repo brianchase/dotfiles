@@ -13,11 +13,12 @@ export LESSHISTFILE=-     # No history file ($HOME/.lesshst)
 [ -d "$HOME/.config/texmf" ] && export TEXMFHOME="$HOME/.config/texmf"
 
 # For other applications:
+export XDG_CONFIG_HOME="$HOME/.config"
 [ -x "$(command -v brave)" ] && export BROWSER="$(command -v brave)"
 [ -x "$(command -v vim)" ] && export EDITOR="$(command -v vim)"
 [ -n "$EDITOR" ] && export VISUAL="$EDITOR"
 
-# Add $HOME/.bin to PATH:
+# For PATH:
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
 [ -d "$HOME/.gem" ] && export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
