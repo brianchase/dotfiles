@@ -27,7 +27,7 @@ external_ip () {
 
 net_terminate () {
   wpa_cli -i "$Interface" terminate &>/dev/null
-  [ "$1" = noerror ] && return 1
+  [ "$1" = noerror ] && return
   net_error "$1"
 }
 
