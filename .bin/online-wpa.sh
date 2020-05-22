@@ -65,8 +65,11 @@ net_main () {
     if [ "$Open" = "y" ]; then
       printf '%s\n' "Connecting on interface $Interface..."
       vpn_arg stop
+      if [ -f "/run/dhcpcd/$Interface.pid" ]; then
+        wpa_cli -i "$Interface" terminate &>/dev/null
+        net_sudo dhcpcd -k "$Interface" -q
+      fi
       net_sudo wpa_supplicant -B -c "$Config" -i "$Interface" -q || net_terminate
-      [ -f "/run/dhcpcd/$Interface.pid" ] && net_sudo dhcpcd -k "$Interface" -q
 # Not all errors from dhcpcd here mean no connection. Wait, then check.
       net_sudo dhcpcd -q "$Interface" || sleep 12
       Internal_IP="$(ip addr show "$Interface" | grep -oP 'inet \K[^ /]*')"
