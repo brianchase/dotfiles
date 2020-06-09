@@ -56,7 +56,7 @@ net_main () {
     if [ "$Close" = "y" ]; then
       vpn_arg stop
       net_terminate noerror
-      net_sudo dhcpcd -k "$Interface" -q
+      net_sudo dhcpcd -k "$Interface" -q 2>/dev/null
     fi
   elif [ ! -s "$Config" ] || [ ! -r "$Config" ]; then
     net_error "$Config is missing, unreadable, or empty!"
@@ -65,9 +65,9 @@ net_main () {
     if [ "$Open" = "y" ]; then
       printf '%s\n' "Connecting on interface $Interface..."
       vpn_arg stop
-      if [ -f "/run/dhcpcd/$Interface.pid" ]; then
+      if [ "$(find /run/dhcpcd/$Interface*.pid 2>/dev/null)" ]; then
         wpa_cli -i "$Interface" terminate &>/dev/null
-        net_sudo dhcpcd -k "$Interface" -q
+        net_sudo dhcpcd -k "$Interface" -q 2>/dev/null
       fi
       net_sudo wpa_supplicant -B -c "$Config" -i "$Interface" -q || net_terminate
 # Not all errors from dhcpcd here mean no connection. Wait, then check.
