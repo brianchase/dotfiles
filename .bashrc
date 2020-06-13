@@ -32,12 +32,10 @@ nwk () { online-wpa.sh && status-dwm.sh; }
 pac () { chk-http.sh && chk_id "pacman" "-S" "$@"; }
 rns () { [ "$(pacman -Qdqt)" ] && chk_id "pacman" "-Rns" $(pacman -Qdqt); }
 syu () { chk-http.sh && chk_id "pacman" "-Syu"; }
-vpn () { client-openvpn.sh "$@" && sleep 2 && status-dwm.sh; }
 export -f lcd_off
 
 # References:
 # chk-http.sh: https://github.com/brianchase/dotfiles/.bin
-# client-openvpn.sh: https://github.com/brianchase/client-openvpn
 # dircolors: https://github.com/brianchase/dotfiles/.config
 # online-wpa.sh: https://github.com/brianchase/dotfiles/.bin
 # status-dwm.sh: https://github.com/brianchase/dotfiles/.bin
