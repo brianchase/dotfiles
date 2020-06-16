@@ -55,7 +55,7 @@ wpa_main () {
         if [ -x "$(command -v online-vpn.sh)" ]; then
           source online-vpn.sh
           external_ip ISP
-          vpn_start
+          vpn_start "$1"
         fi
       else
         wpa_terminate "Failed to get a LAN address!"
@@ -64,4 +64,4 @@ wpa_main () {
   fi
 }
 
-wpa_main
+wpa_main "$1"
