@@ -30,7 +30,7 @@ wpa_main () {
     if [ "$Close" = "y" ]; then
       if [ -x "$(command -v online-vpn.sh)" ]; then
         source online-vpn.sh
-        vpn_stop
+        vpn_stop "$1"
       fi
       wpa_terminate noerror
       wpa_sudo dhcpcd -k "$Interface" -q
