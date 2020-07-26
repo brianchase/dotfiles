@@ -41,7 +41,7 @@ wpa_main () {
     read -r -p "Open connection on interface $Interface? [y/n] " Open
     if [ "$Open" = "y" ]; then
       printf '%s\n' "Connecting on interface $Interface..."
-      if [ -f "/run/dhcpcd-$Interface.pid" ]; then
+      if [ -f "/run/dhcpcd/$Interface.pid" ]; then
         wpa_cli -i "$Interface" terminate &>/dev/null
         wpa_sudo dhcpcd -k "$Interface"
       fi
