@@ -33,6 +33,7 @@ wpa_main () {
         vpn_stop "$1"
       fi
       wpa_terminate noerror
+      sleep 1
       wpa_sudo dhcpcd -k "$Interface" -q
     fi
   elif [ ! -s "$Config" ] || [ ! -r "$Config" ]; then
