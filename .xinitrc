@@ -10,6 +10,10 @@
 [ -x "$(command -v status-dwm.sh)" ] && while true; do \
   status-dwm.sh; sleep 1m; done &
 
+# Setup displays:
+[ "$(xrandr | grep 'HDMI-1 connected')" ] && \
+  xrandr --output LVDS-1 --auto --output HDMI-1 --auto --right-of LVDS-1 &
+
 # Restore wallpaper:
 [ -x "$(command -v $HOME/.config/feh/fehbg)" ] && $HOME/.config/feh/fehbg &
 
