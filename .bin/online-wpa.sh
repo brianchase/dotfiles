@@ -41,6 +41,10 @@ wpa_main () {
   else
     read -r -p "Open connection on interface $Interface? [y/n] " Open
     if [ "$Open" = "y" ]; then
+      if [ -x "$(command -v online-vpn.sh)" ]; then
+        source online-vpn.sh
+        vpn_resolv || wpa_error "Check resolv.conf!"
+      fi
       printf '%s\n' "Connecting on interface $Interface..."
       if [ -f "/run/dhcpcd/$Interface.pid" ]; then
         wpa_cli -i "$Interface" terminate &>/dev/null
@@ -54,7 +58,6 @@ wpa_main () {
         SSID="$(wpa_cli -i "$Interface" status | grep -oP '^ssid=\K[^ ]*')"
         printf '%s\n' "LAN address: $Internal_IP on $SSID"
         if [ -x "$(command -v online-vpn.sh)" ]; then
-          source online-vpn.sh
           external_ip ISP
           vpn_start "$1"
         fi
