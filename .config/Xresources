@@ -1,6 +1,7 @@
 ! After changing this file run: $ xrdb ~/.config/Xresources
 
 Xcursor*theme: Vanilla-DMZ
+Xcursor.size: 16
 *scrollBar: false
 
 ! ----- COLORS -----
