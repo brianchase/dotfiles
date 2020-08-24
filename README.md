@@ -95,11 +95,7 @@ key error messages in stdout that don't appear in log files.
 and off connected monitors
 * [online-wpa.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/online-wpa.sh
 "online-wpa.sh"): Manages wireless connectivity with
-[wpa_supplicant](https://w1.fi/wpa_supplicant "wpa_supplicant") and
-optionally starts and stops [OpenVPN](https://openvpn.net "OpenVPN")
-clients with my
-[client-openvpn.sh](https://github.com/brianchase/client-openvpn
-"client-openvpn.sh")
+[wpa_supplicant](https://w1.fi/wpa_supplicant "wpa_supplicant")
 * [snip-pdf.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/snip-pdf.sh
 "snip-pdf.sh"): Extracts a range of pages from a PDF file. It uses
 [QPDF](http://qpdf.sourceforge.net "QPDF") or, as a fallback,
