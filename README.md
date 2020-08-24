@@ -89,6 +89,10 @@ key error messages in stdout that don't appear in log files.
 * [default-tmux.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/default-tmux.sh
 "default-tmux.sh"): Starts or reattaches to my default
 [tmux](https://github.com/tmux/tmux/wiki "tmux") session.
+* [monitor-switch.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/monitor-switch.sh
+"monitor-switch.sh"): Uses
+[XRandR](https://www.x.org/wiki/Projects/XRandR "XRandR") to turn on
+and off connected monitors
 * [online-wpa.sh](https://github.com/brianchase/dotfiles/blob/master/.bin/online-wpa.sh
 "online-wpa.sh"): Manages wireless connectivity with
 [wpa_supplicant](https://w1.fi/wpa_supplicant "wpa_supplicant") and
