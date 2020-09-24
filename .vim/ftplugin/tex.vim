@@ -25,13 +25,17 @@ endif
 " Set syntax highlighting:
 exec AutoSyn()
 
-syn match  texRefZone		'\\cites\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
-syn match  texRefZone		'\\footcite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
-syn match  texRefZone		'\\nocite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
-syn match  texRefZone		'\\parencite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+" Extend syntax highlighting for biblatex:
+syn match texRefZone '\\cites\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\footcite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\footcites\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\nocite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\parencite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\parencites\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\textcite\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
+syn match texRefZone '\\textcites\%([tp]\*\=\)\=' nextgroup=texRefOption,texCite
 
-" Adapted from http://vim.runpaint.org/typing/using-templates/
-
+" Adapted from http://vim.runpaint.org/typing/using-templates/:
 function! TexTemplate()
   silent! 0r ~/.config/texmf/tex/latex/paper.tex
   set fo-=a

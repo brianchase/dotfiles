@@ -32,6 +32,7 @@ nwk () { online-wpa.sh "$@" && status-dwm.sh; }
 pac () { chk-http.sh && chk_id "pacman" "-S" "$@"; }
 rns () { [ "$(pacman -Qdqt)" ] && chk_id "pacman" "-Rns" $(pacman -Qdqt); }
 syu () { chk-http.sh && chk_id "pacman" "-Syu"; }
+vpn () { online-vpn.sh "$@" && status-dwm.sh; }
 export -f lcd_off
 
 # References:
