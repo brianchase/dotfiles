@@ -14,7 +14,7 @@ export LESSHISTFILE=-     # No history file ($HOME/.lesshst)
 
 # For other applications:
 export XDG_CONFIG_HOME="$HOME/.config"
-[ -x "$(command -v brave)" ] && export BROWSER="$(command -v brave)"
+[ -x "$(command -v firefox)" ] && export BROWSER="$(command -v firefox)"
 [ -x "$(command -v vim)" ] && export EDITOR="$(command -v vim)"
 [ -n "$EDITOR" ] && export VISUAL="$EDITOR"
 
