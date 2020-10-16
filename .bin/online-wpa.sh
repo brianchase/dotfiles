@@ -2,7 +2,7 @@
 
 # Change as necessary:
 Config="/etc/wpa_supplicant/wpa_supplicant.conf"
-Interface="wlp3s0"
+Interface="wlan0"
 
 wpa_sudo () {
   if [ "$(id -u)" -eq 0 ]; then

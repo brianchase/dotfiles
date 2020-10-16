@@ -1,7 +1,8 @@
 ! After changing this file run: $ xrdb ~/.config/Xresources
 
 Xcursor*theme: Vanilla-DMZ
-Xcursor.size: 16
+!Xcursor.size: 16
+Xft.dpi: 132
 *scrollBar: false
 
 ! ----- COLORS -----
@@ -9,7 +10,8 @@ Xcursor.size: 16
 ! Base16 Ocean
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
-#define base00 #2b303b
+!#define base00 #2b303b
+#define base00 #20242c
 #define base01 #343d46
 #define base02 #4f5b66
 #define base03 #65737e
@@ -27,11 +29,7 @@ Xcursor.size: 16
 #define base0F #ab7967
 
 *foreground: base05
-#ifdef background_opacity
-*background: [background_opacity]base00
-#else
 *background: base00
-#endif
 *cursorColor: base05
 
 *color0: base00
@@ -64,7 +62,7 @@ Xcursor.size: 16
 ! ----- URXVT -----
 
 urxvt*externalBorder: 0
-urxvt*font: xft:xos4 Terminus:size=11
+urxvt*font: xft:xos4 Terminus:size=12
 urxvt*imLocale: en_US.UTF-8
 urxvt*internalBorder: 2
 urxvt*loginShell: true
@@ -75,7 +73,7 @@ urxvt*secondaryScroll: true
 urxvt*scrollTtyOutput: false
 urxvt*scrollTtyKeypress: true
 urxvt*tintColor: #CCCCCC
-urxvt*url-launcher: brave
+urxvt*url-launcher: firefox
 
 ! ----- XCALC -----
 
