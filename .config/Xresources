@@ -2,7 +2,6 @@
 
 Xcursor*theme: Vanilla-DMZ
 !Xcursor.size: 16
-Xft.dpi: 132
 *scrollBar: false
 
 ! ----- COLORS -----
@@ -128,6 +127,7 @@ xcalc.ti.button25.label: x
 ! ----- XFT -----
 
 xft.antialias: 1
+Xft.dpi: 132
 xft.hinting: 1
 xft.hintstyle: 3
 
