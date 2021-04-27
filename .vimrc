@@ -10,6 +10,14 @@ autocmd!
 set encoding=utf-8
 set fileencoding=utf-8
 
+" ----- COLORS -----
+
+set termguicolors  " tbc: Use 24-bit color
+
+" For use with st under 'termguicolors':
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 " ----- CURSOR -----
 
 set backspace=indent,eol,start  " bs: Set backspacing in Insert mode
@@ -293,7 +301,6 @@ set noswapfile                " noswf: Disable swap file
 "set pastetoggle=<F11>         " pt: No indenting when pasting
 set shortmess=aoOtTAI         " shm: Shorten messages
 set showmatch                 " sm: Show matching [], {}, and ()
-"set termguicolors             " tbc: Use 24-bit color (avoid with current setup)
 set ttyfast                   " tf: No modem connections; redraws faster
 set viminfo=""                " Disable viminfo
 set wildmenu                  " wmnu: Tab completion for help and commands
