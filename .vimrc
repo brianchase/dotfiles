@@ -12,11 +12,12 @@ set fileencoding=utf-8
 
 " ----- COLORS -----
 
-set termguicolors  " tbc: Use 24-bit color
-
 " For use with st under 'termguicolors':
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set termguicolors  " tbc: Use 24-bit color
+colorscheme evening
 
 " ----- CURSOR -----
 
@@ -30,17 +31,6 @@ set whichwrap+=<,>,[,]          " ww: Allow cursor to cross line boundaries
 " Follow links in Vim's documentation with Enter. Backspace goes back.
 autocmd FileType help nmap <buffer> <Return> <C-]>
 autocmd FileType help nmap <buffer> <BACKSPACE> <C-O>
-
-" ----- HIGHLIGHTING IN SEARCH & VISUAL MODES -----
-
-" At the console and in st (and possibly elsewhere), these settings
-" ensure that highlighted text is visible, no matter how settings here
-" and other in confuration files muck about with color.
-
-highlight Search cterm=NONE term=NONE ctermbg=yellow ctermfg=black
-highlight Visual cterm=reverse term=reverse ctermbg=black ctermfg=gray
-" Necessary when attaching to a tmux session running vim:
-highlight VisualNOS cterm=reverse term=reverse ctermbg=black ctermfg=gray
 
 " ----- INDENTS/TABS -----
 
