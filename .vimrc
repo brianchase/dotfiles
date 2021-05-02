@@ -16,8 +16,8 @@ set fileencoding=utf-8
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-set termguicolors  " tbc: Use 24-bit color
-colorscheme evening
+set termguicolors    " tbc: Use 24-bit color
+colorscheme evening  " colo: Set colorscheme
 
 " ----- CURSOR -----
 

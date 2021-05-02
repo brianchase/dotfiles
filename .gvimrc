@@ -1,8 +1,14 @@
 
 " ----- COLORS -----
 
-colorscheme default
+set bg&                 " bg: Reset background
+highlight clear         " hi: Clear all highlighting
+if exists("syntax_on")
+  syntax reset
+endif
+
 highlight Constant gui=NONE guibg=grey88  " hi: Adjust highlighting
+highlight Cursor guibg=Gold guifg=NONE
 highlight NonText guibg=grey75
 highlight Normal guibg=grey97
 highlight Special gui=NONE guibg=grey97
