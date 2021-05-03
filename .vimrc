@@ -18,6 +18,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set termguicolors    " tbc: Use 24-bit color
 colorscheme evening  " colo: Set colorscheme
+highlight TabLineFill ctermfg=DarkGrey  " hi: Set TabLineFill
+highlight TabLine cterm=bold guibg=DarkGrey guifg=Black
 
 " ----- CURSOR -----
 
