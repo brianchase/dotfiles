@@ -1,6 +1,6 @@
 # ~/.bash_profile
 
-# Set environment variables for Bash:
+# Environment variables for Bash:
 export HISTCONTROL=ignoreboth:erasedups # No duplicate entries in history, etc.
 export HISTFILESIZE=0                   # Empty history on logout
 export HISTSIZE=100                     # Until logout, keep 100 lines of history
@@ -20,7 +20,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # For PATH:
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
-[ -d "$HOME/.gem" ] && export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # Get additional settings from $HOME/.bashrc:
 [ -f "$HOME/.bashrc" ] && source $HOME/.bashrc
