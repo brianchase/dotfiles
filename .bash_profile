@@ -13,7 +13,6 @@ export LESSHISTFILE=-     # No history file ($HOME/.lesshst)
 [ -d "$HOME/.config/texmf" ] && export TEXMFHOME="$HOME/.config/texmf"
 
 # For other applications:
-export XDG_CONFIG_HOME="$HOME/.config"
 [ -x "$(command -v firefox)" ] && export BROWSER="$(command -v firefox)"
 [ -x "$(command -v vim)" ] && export EDITOR="$(command -v vim)"
 [ -n "$EDITOR" ] && export VISUAL="$EDITOR"
