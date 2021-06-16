@@ -27,16 +27,9 @@ complete -c man sudo
 alias ls="ls --color=auto"
 [ -n "$EDITOR" ] && alias notes="$EDITOR $HOME/.config/notes"
 chk_id () { if [ "$(id -u)" -eq 0 ]; then "$@"; else sudo "$@"; fi; }
-lcd_off () { sleep 1; xset dpms force off && slock; }
-nwk () { online-wpa.sh "$@" && status-dwm.sh; }
-pac () { chk-http.sh && chk_id "pacman" "-S" "$@"; }
+lcd_off () { sleep 1; xset dpms force off; }
+nwk () { online-iwd.sh "$@" && status-dwm.sh; }
 rns () { [ "$(pacman -Qdqt)" ] && chk_id "pacman" "-Rns" $(pacman -Qdqt); }
 syu () { chk-http.sh && chk_id "pacman" "-Syu"; }
 vpn () { online-vpn.sh "$@" && status-dwm.sh; }
 export -f lcd_off
-
-# References:
-# chk-http.sh: https://github.com/brianchase/dotfiles/.bin
-# dircolors: https://github.com/brianchase/dotfiles/.config
-# online-wpa.sh: https://github.com/brianchase/dotfiles/.bin
-# status-dwm.sh: https://github.com/brianchase/dotfiles/.bin

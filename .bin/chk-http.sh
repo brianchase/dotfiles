@@ -7,8 +7,8 @@ for i in $(ls -I lo /sys/class/net/); do
   fi
 done
 if [ -z "$Net" ]; then
-  if [ -x "$(command -v online-wpa.sh)" ]; then
-    if online-wpa.sh; then
+  if [ -x "$(command -v online-iwd.sh)" ]; then
+    if online-iwd.sh; then
       [ -x "$(command -v status-dwm.sh)" ] && status-dwm.sh
       exit
     fi
@@ -19,7 +19,3 @@ elif ! ping -q -w1 -c1 8.8.8.8 &>/dev/null; then
   printf '%s\n' "LAN connection only!" >&2
   exit 1
 fi
-
-# References:
-# online-wpa.sh: https://github.com/brianchase/dotfiles/.bin
-# status-dwm.sh: https://github.com/brianchase/dotfiles/.bin
